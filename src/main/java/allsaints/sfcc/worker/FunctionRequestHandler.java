@@ -5,8 +5,6 @@ import allsaints.sfcc.worker.model.NwsSFCCJobHistory;
 import com.amazonaws.services.lambda.runtime.events.APIGatewayProxyRequestEvent;
 import com.amazonaws.services.lambda.runtime.events.APIGatewayProxyResponseEvent;
 import io.micronaut.function.aws.MicronautRequestHandler;
-import io.micronaut.json.JsonMapper;
-import jakarta.inject.Inject;
 import org.slf4j.LoggerFactory;
 import java.io.File;
 import java.io.IOException;
@@ -19,6 +17,7 @@ public class FunctionRequestHandler extends MicronautRequestHandler<APIGatewayPr
     public APIGatewayProxyResponseEvent execute(APIGatewayProxyRequestEvent input) {
 
         String path = input.getPath();
+        LoggerFactory.getLogger(CatalogManager.class).info("Starting...");
         LoggerFactory.getLogger(CatalogManager.class).info("Starting...");
 
 
