@@ -20,7 +20,10 @@ dependencies {
     implementation("io.micronaut:micronaut-http-client")
     implementation 'commons-io:commons-io:2.15.1'
     implementation 'com.google.code.gson:gson:2.7'
-
+    implementation("com.amazonaws:aws-lambda-java-events:3.11.3")
+    implementation("io.micronaut.aws:micronaut-aws-lambda-events-serde")
+    implementation("io.micronaut.aws:micronaut-function-aws")
+    implementation("io.micronaut.crac:micronaut-crac")
 
 
     runtimeOnly("ch.qos.logback:logback-classic")
@@ -36,6 +39,7 @@ java {
 }
 
 micronaut {
+    runtime("lambda_java")
     testRuntime("junit5")
     processing {
         incremental(true)
